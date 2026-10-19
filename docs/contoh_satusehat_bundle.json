@@ -1,0 +1,845 @@
+{
+  "resourceType": "Bundle",
+  "type": "transaction",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:b97b0e60-7475-40a0-b649-673e4d7e08f5",
+      "resource": {
+        "resourceType": "Encounter",
+        "identifier": [
+          {
+            "system": "http://sys-ids.kemkes.go.id/encounter/10000004",
+            "value": "S-FULL"
+          }
+        ],
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "AMB",
+          "display": "ambulatory"
+        },
+        "subject": {
+          "identifier": {
+            "system": "https://fhir.kemkes.go.id/id/nik",
+            "value": "3201015203580001"
+          },
+          "display": "Siti Aminah"
+        },
+        "participant": [
+          {
+            "type": [
+              {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
+                    "code": "ATND",
+                    "display": "attender"
+                  }
+                ]
+              }
+            ],
+            "individual": {
+              "reference": "Practitioner/N10000001",
+              "display": "Ns. Dewi"
+            }
+          }
+        ],
+        "period": {
+          "start": "2026-10-18T02:27:45+00:00",
+          "end": "2026-10-18T02:31:20+00:00"
+        },
+        "location": [
+          {
+            "location": {
+              "reference": "Location/ef011065-38c9-46f8-9c35-d1fe68966a3e",
+              "display": "Posyandu Lansia Melati"
+            }
+          }
+        ],
+        "diagnosis": [
+          {
+            "condition": {
+              "reference": "urn:uuid:34b61927-abd0-420d-8763-6208f2a97665",
+              "display": "General medical examination"
+            },
+            "use": {
+              "coding": [
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/diagnosis-role",
+                  "code": "DD",
+                  "display": "Discharge diagnosis"
+                }
+              ]
+            },
+            "rank": 1
+          }
+        ],
+        "statusHistory": [
+          {
+            "status": "arrived",
+            "period": {
+              "start": "2026-10-18T02:27:45+00:00",
+              "end": "2026-10-18T02:27:45+00:00"
+            }
+          },
+          {
+            "status": "in-progress",
+            "period": {
+              "start": "2026-10-18T02:27:45+00:00",
+              "end": "2026-10-18T02:31:20+00:00"
+            }
+          },
+          {
+            "status": "finished",
+            "period": {
+              "start": "2026-10-18T02:31:20+00:00",
+              "end": "2026-10-18T02:31:20+00:00"
+            }
+          }
+        ],
+        "serviceProvider": {
+          "reference": "Organization/10000004"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Encounter"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:34b61927-abd0-420d-8763-6208f2a97665",
+      "resource": {
+        "resourceType": "Condition",
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active",
+              "display": "Active"
+            }
+          ]
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis",
+                "display": "Encounter Diagnosis"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/sid/icd-10",
+              "code": "Z00.0",
+              "display": "General medical examination"
+            }
+          ]
+        },
+        "subject": {
+          "identifier": {
+            "system": "https://fhir.kemkes.go.id/id/nik",
+            "value": "3201015203580001"
+          },
+          "display": "Siti Aminah"
+        },
+        "encounter": {
+          "reference": "urn:uuid:b97b0e60-7475-40a0-b649-673e4d7e08f5"
+        },
+        "recordedDate": "2026-10-18T02:31:20+00:00"
+      },
+      "request": {
+        "method": "POST",
+        "url": "Condition"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:946df154-3d9a-40eb-96cb-a77bee484e22",
+      "resource": {
+        "resourceType": "Observation",
+        "identifier": [
+          {
+            "system": "http://sys-ids.kemkes.go.id/observation/10000004",
+            "value": "S-FULL-sys"
+          }
+        ],
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8480-6",
+              "display": "Systolic blood pressure"
+            }
+          ]
+        },
+        "subject": {
+          "identifier": {
+            "system": "https://fhir.kemkes.go.id/id/nik",
+            "value": "3201015203580001"
+          },
+          "display": "Siti Aminah"
+        },
+        "performer": [
+          {
+            "reference": "Practitioner/N10000001",
+            "display": "Ns. Dewi"
+          }
+        ],
+        "encounter": {
+          "reference": "urn:uuid:b97b0e60-7475-40a0-b649-673e4d7e08f5"
+        },
+        "effectiveDateTime": "2026-10-18T02:31:20+00:00",
+        "issued": "2026-10-18T02:31:20+00:00",
+        "valueQuantity": {
+          "value": 128,
+          "unit": "mm[Hg]",
+          "system": "http://unitsofmeasure.org",
+          "code": "mm[Hg]"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:e4d3f57a-80f9-4a0e-9b82-f43c8edb06d3",
+      "resource": {
+        "resourceType": "Observation",
+        "identifier": [
+          {
+            "system": "http://sys-ids.kemkes.go.id/observation/10000004",
+            "value": "S-FULL-dia"
+          }
+        ],
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8462-4",
+              "display": "Diastolic blood pressure"
+            }
+          ]
+        },
+        "subject": {
+          "identifier": {
+            "system": "https://fhir.kemkes.go.id/id/nik",
+            "value": "3201015203580001"
+          },
+          "display": "Siti Aminah"
+        },
+        "performer": [
+          {
+            "reference": "Practitioner/N10000001",
+            "display": "Ns. Dewi"
+          }
+        ],
+        "encounter": {
+          "reference": "urn:uuid:b97b0e60-7475-40a0-b649-673e4d7e08f5"
+        },
+        "effectiveDateTime": "2026-10-18T02:31:20+00:00",
+        "issued": "2026-10-18T02:31:20+00:00",
+        "valueQuantity": {
+          "value": 82,
+          "unit": "mm[Hg]",
+          "system": "http://unitsofmeasure.org",
+          "code": "mm[Hg]"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:ad1a1291-30eb-4687-8143-074eadac37fc",
+      "resource": {
+        "resourceType": "Observation",
+        "identifier": [
+          {
+            "system": "http://sys-ids.kemkes.go.id/observation/10000004",
+            "value": "S-FULL-hr"
+          }
+        ],
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8867-4",
+              "display": "Heart rate"
+            }
+          ]
+        },
+        "subject": {
+          "identifier": {
+            "system": "https://fhir.kemkes.go.id/id/nik",
+            "value": "3201015203580001"
+          },
+          "display": "Siti Aminah"
+        },
+        "performer": [
+          {
+            "reference": "Practitioner/N10000001",
+            "display": "Ns. Dewi"
+          }
+        ],
+        "encounter": {
+          "reference": "urn:uuid:b97b0e60-7475-40a0-b649-673e4d7e08f5"
+        },
+        "effectiveDateTime": "2026-10-18T02:31:20+00:00",
+        "issued": "2026-10-18T02:31:20+00:00",
+        "valueQuantity": {
+          "value": 74,
+          "unit": "beats/min",
+          "system": "http://unitsofmeasure.org",
+          "code": "/min"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:3ee1b28b-0737-4e6a-af4f-5c8b2aeb00b4",
+      "resource": {
+        "resourceType": "Observation",
+        "identifier": [
+          {
+            "system": "http://sys-ids.kemkes.go.id/observation/10000004",
+            "value": "S-FULL-spo2"
+          }
+        ],
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "59408-5",
+              "display": "Oxygen saturation in Arterial blood by Pulse oximetry"
+            },
+            {
+              "system": "http://loinc.org",
+              "code": "2708-6",
+              "display": "Oxygen saturation in Arterial blood"
+            }
+          ]
+        },
+        "subject": {
+          "identifier": {
+            "system": "https://fhir.kemkes.go.id/id/nik",
+            "value": "3201015203580001"
+          },
+          "display": "Siti Aminah"
+        },
+        "performer": [
+          {
+            "reference": "Practitioner/N10000001",
+            "display": "Ns. Dewi"
+          }
+        ],
+        "encounter": {
+          "reference": "urn:uuid:b97b0e60-7475-40a0-b649-673e4d7e08f5"
+        },
+        "effectiveDateTime": "2026-10-18T02:31:20+00:00",
+        "issued": "2026-10-18T02:31:20+00:00",
+        "valueQuantity": {
+          "value": 97,
+          "unit": "%",
+          "system": "http://unitsofmeasure.org",
+          "code": "%"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:11352082-167a-48fe-bee3-3367f5d19011",
+      "resource": {
+        "resourceType": "Observation",
+        "identifier": [
+          {
+            "system": "http://sys-ids.kemkes.go.id/observation/10000004",
+            "value": "S-FULL-temp"
+          }
+        ],
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8310-5",
+              "display": "Body temperature"
+            }
+          ]
+        },
+        "subject": {
+          "identifier": {
+            "system": "https://fhir.kemkes.go.id/id/nik",
+            "value": "3201015203580001"
+          },
+          "display": "Siti Aminah"
+        },
+        "performer": [
+          {
+            "reference": "Practitioner/N10000001",
+            "display": "Ns. Dewi"
+          }
+        ],
+        "encounter": {
+          "reference": "urn:uuid:b97b0e60-7475-40a0-b649-673e4d7e08f5"
+        },
+        "effectiveDateTime": "2026-10-18T02:31:20+00:00",
+        "issued": "2026-10-18T02:31:20+00:00",
+        "valueQuantity": {
+          "value": 36.6,
+          "unit": "C",
+          "system": "http://unitsofmeasure.org",
+          "code": "Cel"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:898457c0-004b-4747-bc57-24978936d179",
+      "resource": {
+        "resourceType": "Observation",
+        "identifier": [
+          {
+            "system": "http://sys-ids.kemkes.go.id/observation/10000004",
+            "value": "S-FULL-weight"
+          }
+        ],
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "29463-7",
+              "display": "Body weight"
+            }
+          ]
+        },
+        "subject": {
+          "identifier": {
+            "system": "https://fhir.kemkes.go.id/id/nik",
+            "value": "3201015203580001"
+          },
+          "display": "Siti Aminah"
+        },
+        "performer": [
+          {
+            "reference": "Practitioner/N10000001",
+            "display": "Ns. Dewi"
+          }
+        ],
+        "encounter": {
+          "reference": "urn:uuid:b97b0e60-7475-40a0-b649-673e4d7e08f5"
+        },
+        "effectiveDateTime": "2026-10-18T02:31:20+00:00",
+        "issued": "2026-10-18T02:31:20+00:00",
+        "valueQuantity": {
+          "value": 58.4,
+          "unit": "kg",
+          "system": "http://unitsofmeasure.org",
+          "code": "kg"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:2eb77b04-3d6f-4b1a-a41e-ccd3e94c5add",
+      "resource": {
+        "resourceType": "Observation",
+        "identifier": [
+          {
+            "system": "http://sys-ids.kemkes.go.id/observation/10000004",
+            "value": "S-FULL-height"
+          }
+        ],
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8302-2",
+              "display": "Body height"
+            }
+          ]
+        },
+        "subject": {
+          "identifier": {
+            "system": "https://fhir.kemkes.go.id/id/nik",
+            "value": "3201015203580001"
+          },
+          "display": "Siti Aminah"
+        },
+        "performer": [
+          {
+            "reference": "Practitioner/N10000001",
+            "display": "Ns. Dewi"
+          }
+        ],
+        "encounter": {
+          "reference": "urn:uuid:b97b0e60-7475-40a0-b649-673e4d7e08f5"
+        },
+        "effectiveDateTime": "2026-10-18T02:31:20+00:00",
+        "issued": "2026-10-18T02:31:20+00:00",
+        "valueQuantity": {
+          "value": 158.0,
+          "unit": "cm",
+          "system": "http://unitsofmeasure.org",
+          "code": "cm"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:62587e8e-d89a-4873-a5c4-7d16762659a4",
+      "resource": {
+        "resourceType": "Observation",
+        "identifier": [
+          {
+            "system": "http://sys-ids.kemkes.go.id/observation/10000004",
+            "value": "S-FULL-bmi"
+          }
+        ],
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "exam",
+                "display": "Exam"
+              }
+            ]
+          },
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "39156-5",
+              "display": "Body mass index (BMI) [Ratio]"
+            }
+          ]
+        },
+        "subject": {
+          "identifier": {
+            "system": "https://fhir.kemkes.go.id/id/nik",
+            "value": "3201015203580001"
+          },
+          "display": "Siti Aminah"
+        },
+        "performer": [
+          {
+            "reference": "Practitioner/N10000001",
+            "display": "Ns. Dewi"
+          }
+        ],
+        "encounter": {
+          "reference": "urn:uuid:b97b0e60-7475-40a0-b649-673e4d7e08f5"
+        },
+        "effectiveDateTime": "2026-10-18T02:31:20+00:00",
+        "issued": "2026-10-18T02:31:20+00:00",
+        "valueQuantity": {
+          "value": 23.4,
+          "unit": "kg/m2",
+          "system": "http://unitsofmeasure.org",
+          "code": "kg/m2"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:35e3d1f4-1bc9-4cd5-85de-b6671284b8b8",
+      "resource": {
+        "resourceType": "Observation",
+        "identifier": [
+          {
+            "system": "http://sys-ids.kemkes.go.id/observation/10000004",
+            "value": "S-FULL-fat"
+          }
+        ],
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "exam",
+                "display": "Exam"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "41982-0",
+              "display": "Percentage of body fat Measured"
+            }
+          ]
+        },
+        "subject": {
+          "identifier": {
+            "system": "https://fhir.kemkes.go.id/id/nik",
+            "value": "3201015203580001"
+          },
+          "display": "Siti Aminah"
+        },
+        "performer": [
+          {
+            "reference": "Practitioner/N10000001",
+            "display": "Ns. Dewi"
+          }
+        ],
+        "encounter": {
+          "reference": "urn:uuid:b97b0e60-7475-40a0-b649-673e4d7e08f5"
+        },
+        "effectiveDateTime": "2026-10-18T02:31:20+00:00",
+        "issued": "2026-10-18T02:31:20+00:00",
+        "valueQuantity": {
+          "value": 31.2,
+          "unit": "%",
+          "system": "http://unitsofmeasure.org",
+          "code": "%"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:55ece10d-5df1-4152-a410-7d868db3d77d",
+      "resource": {
+        "resourceType": "Observation",
+        "identifier": [
+          {
+            "system": "http://sys-ids.kemkes.go.id/observation/10000004",
+            "value": "S-FULL-gripL"
+          }
+        ],
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "exam",
+                "display": "Exam"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "83173-5",
+              "display": "Grip strength Hand - left Dynamometer"
+            }
+          ]
+        },
+        "subject": {
+          "identifier": {
+            "system": "https://fhir.kemkes.go.id/id/nik",
+            "value": "3201015203580001"
+          },
+          "display": "Siti Aminah"
+        },
+        "performer": [
+          {
+            "reference": "Practitioner/N10000001",
+            "display": "Ns. Dewi"
+          }
+        ],
+        "encounter": {
+          "reference": "urn:uuid:b97b0e60-7475-40a0-b649-673e4d7e08f5"
+        },
+        "effectiveDateTime": "2026-10-18T02:31:20+00:00",
+        "issued": "2026-10-18T02:31:20+00:00",
+        "valueQuantity": {
+          "value": 19.5,
+          "unit": "kgf",
+          "system": "http://unitsofmeasure.org",
+          "code": "kgf"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:ee133dbd-6bb4-4d36-a406-b8f1e566103f",
+      "resource": {
+        "resourceType": "Observation",
+        "identifier": [
+          {
+            "system": "http://sys-ids.kemkes.go.id/observation/10000004",
+            "value": "S-FULL-gripR"
+          }
+        ],
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "exam",
+                "display": "Exam"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "83174-3",
+              "display": "Grip strength Hand - right Dynamometer"
+            }
+          ]
+        },
+        "subject": {
+          "identifier": {
+            "system": "https://fhir.kemkes.go.id/id/nik",
+            "value": "3201015203580001"
+          },
+          "display": "Siti Aminah"
+        },
+        "performer": [
+          {
+            "reference": "Practitioner/N10000001",
+            "display": "Ns. Dewi"
+          }
+        ],
+        "encounter": {
+          "reference": "urn:uuid:b97b0e60-7475-40a0-b649-673e4d7e08f5"
+        },
+        "effectiveDateTime": "2026-10-18T02:31:20+00:00",
+        "issued": "2026-10-18T02:31:20+00:00",
+        "valueQuantity": {
+          "value": 22.4,
+          "unit": "kgf",
+          "system": "http://unitsofmeasure.org",
+          "code": "kgf"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    }
+  ]
+}

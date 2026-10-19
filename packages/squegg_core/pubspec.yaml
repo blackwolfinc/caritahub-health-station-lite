@@ -1,0 +1,22 @@
+name: squegg_core
+description: "Flutter package for Squegg Smart Hand Grip Trainer BLE device. Scan, connect, and receive real-time grip strength data."
+version: 0.1.0
+homepage: https://github.com/caritahub/caritahub-kit-cores/tree/main/squegg_core
+
+environment:
+  sdk: ^3.9.2
+  flutter: '>=3.3.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_blue_plus: ^1.32.12
+
+dev_dependencies:
+  flutter_lints: ^5.0.0
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  # Pure Flutter package — no platform-specific plugin code.
+  # BLE is handled via flutter_blue_plus dependency.
